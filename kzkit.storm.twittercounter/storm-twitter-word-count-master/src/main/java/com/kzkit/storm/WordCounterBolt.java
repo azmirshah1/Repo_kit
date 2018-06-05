@@ -88,7 +88,7 @@ public class WordCounterBolt extends BaseRichBolt {
 
         // Output top list:
         for (Map.Entry<Long, String> entry : top.entrySet()) {
-            logger.info(new StringBuilder("Most Popular Words -> ").append(entry.getValue()).append("| Total Word:").append(entry.getKey()).toString());
+            logger.info(new StringBuilder("The Most Popular Words -> ").append(entry.getValue()).append("| Total Word:").append(entry.getKey()).toString());
         }
 
         // Clear top list
