@@ -66,7 +66,7 @@ public class WordCounterBolt extends BaseRichBolt {
         long logPeriodSec = (now - lastLogTime) / 1000;
         if (logPeriodSec > logIntervalSec) {
         	logger.info("\n\n");
-        	logger.info("Word count: "+counter.size());
+        	logger.info("Total Words: "+counter.size() + " Words");
 
             publishTopList();
             lastLogTime = now;
@@ -88,7 +88,7 @@ public class WordCounterBolt extends BaseRichBolt {
 
         // Output top list:
         for (Map.Entry<Long, String> entry : top.entrySet()) {
-            logger.info(new StringBuilder("top - ").append(entry.getValue()).append('|').append(entry.getKey()).toString());
+            logger.info(new StringBuilder("Most Popular Words -> ").append(entry.getValue()).append("| Total Word:").append(entry.getKey()).toString());
         }
 
         // Clear top list
